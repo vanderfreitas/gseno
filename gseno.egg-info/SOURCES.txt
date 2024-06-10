@@ -1,7 +1,7 @@
 README.md
 setup.py
 gseno/__init__.py
-gseno/intersection.py
+gseno/algorithms.py
 gseno.egg-info/PKG-INFO
 gseno.egg-info/SOURCES.txt
 gseno.egg-info/dependency_links.txt

@@ -1,8 +1,9 @@
 
-from .intersection import get_intersections_between_sets
+from .algorithms import get_intersections_between_sets, get_accumulated_metrics_between_sets 
 
 __all__ = [
-    'get_intersections_between_sets'
+    'get_intersections_between_sets',
+    'get_accumulated_metrics_between_sets'
 ]
 
 __version__ = "1.0"

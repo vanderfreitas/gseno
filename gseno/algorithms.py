@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 
-
 def compute_graph_metrics(graph):
     """
     Compute node-level graph metrics
@@ -74,9 +73,8 @@ def get_intersections_between_sets(graph, sorted_nodes_df):
         pd.DataFrame: intersections between nodes and graph metrics over different node ranks
     """
 
+    # Compute node-level metrics
     graph_metrics_df = compute_graph_metrics(graph)
-
-
 
     n_metrics = len(graph_metrics_df.columns)-1 # number of metrics
     len_results = sorted_nodes_df['rank'].nunique() # number of unique ranks
@@ -121,4 +119,59 @@ def get_intersections_between_sets(graph, sorted_nodes_df):
         columns=graph_metrics_df.columns[1:],
         index=sorted_nodes_df['rank'].unique()
     ) 
+    return results_df
+
+
+def get_accumulated_metrics_between_sets(graph, sorted_nodes_df):
+    """
+    Accumulate the metrics of nodes according to their rank
+ 
+    Args:
+        graph (igraph): input graph to be compared with the sorted nodes
+        sorted_nodes_df (pd.DataFrame): node labels and ranks
+ 
+    Returns:
+        pd.DataFrame: Accumulated metrics of nodes according to their rank
+    """
+
+    # Compute node-level metrics
+    graph_metrics_df = compute_graph_metrics(graph)
+
+    n_metrics = len(graph_metrics_df.columns)-1 # number of metrics
+    len_results = sorted_nodes_df['rank'].nunique() # number of unique ranks
+
+    # numpy array of the results
+    results = np.zeros((len_results,n_metrics))
+    results_i = 0
+
+    nodes_considered_so_far = set()
+
+    # check every single unique rank and compute the intersections of its corresponding nodes
+    # to nodes sorted by the graph metric, considering the same corresponding positions
+    for rank in sorted_nodes_df['rank'].unique(): # unique returns the unique values in order of appearance.
+
+        # find all nodes with the same rank        
+        node_set_for_a_given_rank = set(sorted_nodes_df[sorted_nodes_df['rank']==rank]['label'])
+
+        nodes_considered_so_far.update(node_set_for_a_given_rank)
+
+        results_j = 0
+        # Select the columns from the matrices
+        for m_col in graph_metrics_df.columns[1:]:
+            results[results_i,results_j] = graph_metrics_df[graph_metrics_df['label'].isin(nodes_considered_so_far)][m_col].sum()
+            results_j += 1
+
+        results_i += 1
+
+    # Create a dataframe with the results and return it
+    results_df = pd.DataFrame(
+        data=results,
+        columns=graph_metrics_df.columns[1:],
+        index=sorted_nodes_df['rank'].unique()
+    )
+
+    # normalize the result to be within [0,1]
+    for m_col in results_df.columns: 
+        results_df[m_col] = results_df[m_col]  / results_df[m_col].abs().max() 
+    
     return results_df

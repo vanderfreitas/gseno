@@ -20,9 +20,23 @@ sorted_nodes_df = pd.DataFrame(
     }
 )
 
+# First approach: Compute the intersections between sets nodes nodes ordered by
+#                 a certain metric and its rank from the input dataframe
 results_df = gseno.get_intersections_between_sets(
     graph=g, 
     sorted_nodes_df=sorted_nodes_df
 )
 
+print('get_intersections_between_sets:')
+print(f'{results_df}')
+
+
+# Second approach: Accumulate the nodes' metrics from the sorted nodes by rank (from the input dataframe)
+#                  ps: the output for each metric is normalized to be within [0,1]
+results_df = gseno.get_accumulated_metrics_between_sets(
+    graph=g, 
+    sorted_nodes_df=sorted_nodes_df
+)
+
+print('get_accumulated_metrics_between_sets:')
 print(f'{results_df}')
