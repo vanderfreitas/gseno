@@ -1,8 +1,8 @@
 
-![GitHub](https://img.shields.io/github/license/raffoliveira/ts2vvg)
-![GitHub last commit](https://img.shields.io/github/last-commit/raffoliveira/ts2vvg)
-![GitHub stars](https://img.shields.io/github/stars/raffoliveira/ts2vvg?style=social)
-![GitHub downloads](https://img.shields.io/github/downloads/raffoliveira/ts2vvg/total)
+![GitHub](https://img.shields.io/github/license/vanderfreitas/gseno)
+![GitHub last commit](https://img.shields.io/github/last-commit/vanderfreitas/gseno)
+![GitHub stars](https://img.shields.io/github/stars/vanderfreitas/gseno?style=social)
+![GitHub downloads](https://img.shields.io/github/downloads/vanderfreitas/gseno/total)
 
 
 # Contents
@@ -27,7 +27,7 @@ Rocha, R. J. V.; Ducure, S.; Duarte, F. H. O.; Santos, L. B. L.; Macau, E. E. N.
 
 # Installation
 
-To install the ts2vvg package in a Python environment:
+To install the gseno package in a Python environment:
 
 ```shell
 pip install git+https://github.com/vanderfreitas/gseno@main

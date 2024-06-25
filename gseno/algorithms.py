@@ -61,7 +61,7 @@ def get_nodes_present_in_both_dfs(graph_metrics_df, sorted_nodes_df):
     return graph_metrics_df, sorted_nodes_df
 
 
-def get_intersections_between_sets(graph, sorted_nodes_df):
+def csn(graph, sorted_nodes_df):
     """
     Get the intersections between nodes and graph metrics over different node ranks
  
@@ -122,7 +122,7 @@ def get_intersections_between_sets(graph, sorted_nodes_df):
     return results_df
 
 
-def get_accumulated_metrics_between_sets(graph, sorted_nodes_df):
+def anm(graph, sorted_nodes_df):
     """
     Accumulate the metrics of nodes according to their rank
  
