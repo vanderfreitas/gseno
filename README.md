@@ -14,7 +14,7 @@
 
 # gseno
 
-gseno: a Python package with an implementation of two algorithms to compare a graph structure with a given ranking of nodes. 
+gseno: a Python package with an implementation of two approaches to compare a graph structure with a given ranking of nodes. 
 
 Author: Vander L. S. Freitas 
 
