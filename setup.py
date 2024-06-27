@@ -25,7 +25,7 @@ setup(
     description="Graph structure explains nodes' ordering",
     url='https://github.com/vanderfreitas/gseno',
     author='Vander L. S. Freitas',
-    author_email='vandercomp@gmail.com',
+    author_email='XXXXXXXXXXXXXX@gmail.com',
     packages=['gseno'],
     install_requires=[
         'igraph',
