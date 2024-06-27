@@ -16,14 +16,7 @@
 
 gseno: a Python package with an implementation of two approaches to compare a graph structure with a given ranking of nodes. 
 
-Author: Vander L. S. Freitas 
-
-Last updated: 2024.06.10.
-
-If you use this package, please cite the following paper:
-
-Rocha, R. J. V.; Ducure, S.; Duarte, F. H. O.; Santos, L. B. L.; Macau, E. E. N.; Souza, F. S. H.; Freitas, V. L. S. Correspondences between the structures of mobility networks and the spread of COVID-19: comparing graph topology with time series of nodes ordering, arXiv e-prints, 2024. doi:.
-
+Author: Vander L. S. Freitas
 
 # Installation
 
