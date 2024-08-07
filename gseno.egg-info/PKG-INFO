@@ -4,7 +4,8 @@ Version: 1.0
 Summary: Graph structure explains nodes' ordering
 Home-page: https://github.com/vanderfreitas/gseno
 Author: Vander L. S. Freitas
-Author-email: vandercomp@gmail.com
+Author-email: XXXXXXXXXXXXXX@gmail.com
+License-File: LICENSE
 Requires-Dist: igraph
 Requires-Dist: numpy
 Requires-Dist: pandas
