@@ -2,7 +2,7 @@ import pandas as pd
 import igraph as ig
 import numpy as np
 import gseno
-
+import os
 def filter_cases(csv_file, n):
     # Load the CSV file into a DataFrame
     df = pd.read_csv(
@@ -47,9 +47,9 @@ def filter_records(df1, df2):
 
     # Return the filtered DataFrame
     return filtered_df2
-
+mydir = os.getcwd()
 # Load the mobility Brazil graph
-g = ig.Graph.Read_GraphML('weighted_graph_all_modes.GraphML')
+g = ig.Graph.Read_GraphML(mydir+"\\examples\\brazil\\data\\networks\\weighted_graph_all_modes.GraphML")
 
 # Set vertex labels
 g.vs['label'] = np.linspace(1, g.vcount(), g.vcount(), dtype=int).tolist()
@@ -76,7 +76,7 @@ graph_df = pd.DataFrame({
 })
 
 # Filter the cases DataFrame
-filter_df = filter_cases("cases-brazil-cities-time_2020.csv", 5)
+filter_df = filter_cases(mydir+"\\examples\\brazil\\data\\preprocessed\\cases-brazil-cities-time_2020.csv", 5)
 
 # Get the shared ibgeIDs between the graph DataFrame and filtered cases DataFrame
 shared_cities = filter_records(graph_df, filter_df)
