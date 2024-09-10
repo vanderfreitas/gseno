@@ -1,9 +1,9 @@
 
-from .algorithms import get_intersections_between_sets, get_accumulated_metrics_between_sets 
+from .algorithms import csn, anm 
 
 __all__ = [
-    'get_intersections_between_sets',
-    'get_accumulated_metrics_between_sets'
+    'csn',
+    'anm'
 ]
 
 __version__ = "1.0"
